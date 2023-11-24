@@ -18,6 +18,15 @@ body{
     background-color: var(--grey-4);
 }
 
+label{
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
 :root{
     --color-primary: #FF577F;
     --color-primary-Focus: #FF427F;

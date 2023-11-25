@@ -7,6 +7,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding-block: 1rem;
   max-width: 22rem;
   min-height: 100vh;
 `;

@@ -7,8 +7,8 @@ import {
   AiOutlineCheckCircle,
 } from "react-icons/ai";
 
-interface IInputProps {
-  text?: string;
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
   password?: boolean;
   message?: {
     info?: string;
@@ -16,7 +16,7 @@ interface IInputProps {
     success?: string;
   };
 }
-const Input: React.FC<IInputProps> = ({ text, password, message }) => {
+const Input: React.FC<IInputProps> = ({ label, password, message, ...inputProps }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = () => {
@@ -25,14 +25,19 @@ const Input: React.FC<IInputProps> = ({ text, password, message }) => {
 
   return (
     <Styles.Container>
-      <label>{text}</label>
       {!password ? (
-        <input style={{ borderRadius: "0.25rem" }} />
+        <>
+          <label htmlFor="input">{label}</label>
+          <input id="input" style={{ borderRadius: "0.25rem" }} {...inputProps} />
+        </>
       ) : (
-        <Styles.PasswordBox>
-          <input type={showPassword ? "text" : "password"} />
-          <span onClick={handleChange}>{showPassword ? <FaEye /> : <FaEyeSlash />}</span>
-        </Styles.PasswordBox>
+        <>
+          <label htmlFor="password">{label}</label>
+          <Styles.PasswordBox>
+            <input id="password" type={showPassword ? "text" : "password"} {...inputProps} />
+            <span onClick={handleChange}>{showPassword ? <FaEye /> : <FaEyeSlash />}</span>
+          </Styles.PasswordBox>
+        </>
       )}
       {message && (
         <>

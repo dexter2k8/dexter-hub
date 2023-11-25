@@ -22,6 +22,13 @@ label{
     font-size: 0.8rem;
 }
 
+button {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
 h1 {
     font-size: 1.4rem;
     color: var(--color-primary);
@@ -29,10 +36,10 @@ h1 {
 
 :root{
     --color-primary: #FF577F;
-    --color-primary-Focus: #FF427F;
+    --color-primary-hover: #FF427F;
     --color-primary-Negative: #59323F;
     --grey-0: #F8F9FA;
-    --grey-1: #868E96;
+    --grey-1: #D1D5DB;
     --grey-2: #343B41;
     --grey-3: #212529;
     --grey-4: #121214;

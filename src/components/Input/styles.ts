@@ -10,6 +10,9 @@ const Container = styled.div`
     width: 100%;
     color: var(--grey-3);
     background-color: var(--grey-0);
+    &::placeholder {
+      color: var(--grey-1);
+    }
   }
   small {
     display: flex;

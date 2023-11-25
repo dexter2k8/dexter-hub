@@ -21,7 +21,7 @@ function Register() {
   const { control, handleSubmit } = useForm<IRegisterProps>({ resolver: yupResolver(schema) });
   return (
     <Styles.Container>
-      <Header text="Voltar" style={{ width: "22rem" }} />
+      <Header buttonText="Voltar" />
       <Styles.FormField onSubmit={handleSubmit(registerUser)}>
         <h2>Crie sua conta</h2>
         <label>Rápido e grátis, vamos nessa</label>

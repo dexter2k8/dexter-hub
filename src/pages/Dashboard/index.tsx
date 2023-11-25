@@ -1,11 +1,12 @@
+import Styles from "./styles";
 import Header from "../../components/Header";
 
 function Dashboard() {
   return (
-    <div>
-      <Header text="Sair" clearData />
+    <Styles.Container>
+      <Header buttonText="Sair" clearData />
       <h1>Dashboard</h1>
-    </div>
+    </Styles.Container>
   );
 }
 

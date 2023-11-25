@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import Styles from "./styles";
 
 interface IHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  text?: string;
+  buttonText?: string;
   clearData?: boolean;
 }
 
-function Header({ text, clearData, ...props }: IHeaderProps) {
+function Header({ buttonText, clearData, ...props }: IHeaderProps) {
   return (
-    <Styles.Header {...props}>
+    <Styles.Header refAlign={buttonText ? "left" : "center"} {...props}>
       <h1>Dexter Hub</h1>
-      {text && (
+      {buttonText && (
         <Link to={"/"} onClick={() => clearData && localStorage.clear()}>
-          {text}
+          {buttonText}
         </Link>
       )}
     </Styles.Header>

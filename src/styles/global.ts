@@ -45,6 +45,10 @@ h1 {
     font-size: 1.4rem;
 }
 
+small {
+    color: var(--grey-1);
+}
+
 :root{
     --color-primary: #FF577F;
     --color-primary-hover: #FF427F;

@@ -6,10 +6,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  /* TODO: adjust gap */
-  gap: 10rem;
+  gap: 8rem;
   @media (min-width: 460px) {
     width: 58rem;
+    gap: 6rem;
   }
 `;
 
@@ -18,8 +18,7 @@ const Content = styled.div`
   top: 5rem;
   width: 100vw;
   padding: 1rem;
-  /* TODO: adjust border */
-  border-block: 2px solid green;
+  border-block: 1px solid var(--grey-3);
 `;
 
 const SectionTitle = styled.section`

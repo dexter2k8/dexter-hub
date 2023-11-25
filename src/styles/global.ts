@@ -29,6 +29,18 @@ button {
     transition: 0.3s;
 }
 
+a {
+    background-color: var(--grey-2);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    width: 20rem;
+    text-align: center;
+    transition: 0.3s;
+    &:hover {
+      background-color: var(--grey-3);
+    }
+  }
+
 h1 {
     font-size: 1.4rem;
     color: var(--color-primary);

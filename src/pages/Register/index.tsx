@@ -46,8 +46,8 @@ function Register() {
           control={control}
           name="courseModule"
           options={[
-            { value: "Primeiro modulo", label: "Primeiro modulo" },
-            { value: "Segundo modulo", label: "Segundo modulo" },
+            { value: "Primeiro Módulo (Introdução ao Frontend)", label: "Primeiro Módulo" },
+            { value: "Segundo Módulo (Frontend Avançado)", label: "Segundo Módulo" },
           ]}
         />
         <button type="submit">Cadastrar</button>

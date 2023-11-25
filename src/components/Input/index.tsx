@@ -10,7 +10,13 @@ interface IInputProps<T> extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   password?: boolean;
 }
-const Input: React.FC<IInputProps<T>> = ({ control, name, label, password, ...inputProps }) => {
+const Input = <T extends FieldValues>({
+  control,
+  name,
+  label,
+  password,
+  ...inputProps
+}: IInputProps<T>) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = () => {

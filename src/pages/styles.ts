@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   a {
     background-color: var(--grey-2);
     border-radius: 0.25rem;
@@ -33,7 +33,8 @@ const FormField = styled.form`
   padding: 2rem 1rem;
   background-color: var(--grey-3);
   border-radius: 0.25rem;
-  h2 {
+  h2,
+  label:nth-child(2) {
     text-align: center;
   }
   button {

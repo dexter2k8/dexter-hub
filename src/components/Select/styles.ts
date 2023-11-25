@@ -9,14 +9,15 @@ const Container = styled.div`
 
 const Component = styled.div`
   padding-inline: 1rem;
-  background-color: var(--grey-0);
+  background-color: var(--grey-2);
   border-radius: 0.25rem;
   select {
     cursor: pointer;
     display: block;
     padding-block: 1rem;
     width: 100%;
-    color: var(--grey-3);
+    color: var(--grey-0);
+    background-color: var(--grey-2);
   }
 `;
 

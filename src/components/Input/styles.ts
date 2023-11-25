@@ -8,11 +8,8 @@ const Container = styled.div`
   input {
     padding: 1rem;
     width: 100%;
-    color: var(--grey-3);
-    background-color: var(--grey-0);
-    &::placeholder {
-      color: var(--grey-1);
-    }
+    color: var(--grey-1);
+    background-color: var(--grey-2);
   }
   small {
     display: flex;

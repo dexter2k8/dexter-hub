@@ -32,6 +32,9 @@ function ModalAddTechnology({ openModal, handleClose }: IModalAddTechnologyProps
       const { data } = await axios.get<IDataUser>("/api/profile"); // chamada do miragejs
       // const { data } = await api.get<iDataUser>("/profile"); // chamada do backend
       setUserData(data);
+      toast.warning(
+        "Adicionar tecnologia está implementada no miragejs apenas para o usuário User"
+      );
     }
   }
 

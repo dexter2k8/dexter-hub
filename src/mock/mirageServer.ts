@@ -46,6 +46,7 @@ export function makeServer({ environment = "development" }) {
 
       this.get("/profile", (schema, request) => {
         const token = request.requestHeaders.authorization?.replace("Bearer ", "");
+
         // Simula a verificação do token
         if (!token) {
           return new MResponse(403, { message: "Token não fornecido" });

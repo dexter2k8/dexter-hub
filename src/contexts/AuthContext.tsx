@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import { IDataPost, IDataUser } from "../interfaces";
-// import api from "../services/api";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +24,9 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       const res = await axios.post<IDataPost>("/api/sessions", data); // chamada do miragejs
       // const res = await api.post<IDataPost>("/sessions", data); // chamada do backend
       const { user, token } = res.data;
+      //Armazena o token para as requisições onde é necessário
+      axios.defaults.headers.authorization = `Bearer ${token}`; // para uso do miragejs
+      // api.defaults.headers.authorization = `Bearer ${token}`; // para uso do backend
       setUserData(user);
       localStorage.setItem("@hub:token", token);
       toast.success("Login realizado com sucesso");

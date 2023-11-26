@@ -12,3 +12,8 @@ export interface IDataUser {
   courseModule?: string;
   techs: ITechsProps[];
 }
+
+export interface IDataPost {
+  user: IDataUser;
+  token: string;
+}

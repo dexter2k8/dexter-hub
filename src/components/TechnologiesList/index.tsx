@@ -1,36 +1,32 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Styles from "./styles";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../Button";
 import ModalAddTechnology from "./ModalAddTechnology";
-
-const mock = [
-  {
-    id: "1",
-    title: "HTML",
-    status: "Iniciante",
-  },
-  {
-    id: "2",
-    title: "CSS",
-    status: "Intermediário",
-  },
-  {
-    id: "3",
-    title: "JavaScript",
-    status: "Avançado",
-  },
-];
-
-async function delTechnology(key: string) {
-  console.log(key);
-}
+import axios from "axios";
+import { IDataUser } from "../../interfaces";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function TechnologiesList() {
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const { userData, setUserData } = useContext(AuthContext);
 
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
+
+  async function delTechnology(key: string) {
+    try {
+      await axios.delete(`/api/users/techs/${key}`); // chamada do miragejs
+      // await api.delete(`/users/techs/${key}`); // chamada do backend
+    } catch (error) {
+      console.error("error", error);
+    } finally {
+      // TODO: testar se setUserData funciona para atualizar os dados
+      const { data } = await axios.get<IDataUser>("/api/profile"); // chamada do miragejs
+      // const { data } = await api.get<iDataUser>("/profile"); // chamada do backend
+      setUserData(data);
+    }
+  }
 
   return (
     <Styles.Container>
@@ -41,7 +37,7 @@ function TechnologiesList() {
         </Button>
       </Styles.AddTechnology>
       <Styles.TechnologyList>
-        {mock.map((technology) => (
+        {userData?.techs.map((technology) => (
           <li key={technology.id}>
             <p>{technology.title}</p>
             <Styles.Status>

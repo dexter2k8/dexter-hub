@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { IDataUser } from "../interfaces";
+import { IDataPost, IDataUser } from "../interfaces";
 // import api from "../services/api";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -8,13 +8,9 @@ import { useNavigate } from "react-router-dom";
 interface IAuthContext {
   loading: boolean;
   userData?: IDataUser;
+  setUserData: (data: IDataUser) => void;
   loginUser: (data: object) => void;
   registerUser: (data: object) => void;
-}
-
-interface IDataPost {
-  user: IDataUser;
-  token: string;
 }
 
 export const AuthContext = createContext({} as IAuthContext);
@@ -73,7 +69,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     loadUser();
   }, []);
 
-  const values = { userData, loading, loginUser, registerUser };
+  const values = { userData, setUserData, loading, loginUser, registerUser };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 }

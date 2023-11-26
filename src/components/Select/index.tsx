@@ -25,6 +25,7 @@ const Select = <T extends FieldValues>({
     <Controller
       control={control}
       name={name}
+      defaultValue={options[0].value}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <Styles.Container>
           <label htmlFor="select">{label}</label>

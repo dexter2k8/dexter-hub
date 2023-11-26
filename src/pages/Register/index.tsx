@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "../../validators/validateRegister";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
+import Button from "../../components/Button";
 
 interface IRegisterProps {
   name: string;
@@ -50,7 +51,7 @@ function Register() {
             { value: "Segundo Módulo (Frontend Avançado)", label: "Segundo Módulo" },
           ]}
         />
-        <button type="submit">Cadastrar</button>
+        <Button type="submit">Cadastrar</Button>
       </Styles.FormField>
     </Styles.Container>
   );

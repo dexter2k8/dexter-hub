@@ -9,14 +9,6 @@ const AddTechnology = styled.section`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-  button {
-    padding: 0 0.5rem;
-    font-size: 1.4rem;
-    background-color: var(--grey-3);
-    &:hover {
-      background-color: var(--grey-2);
-    }
-  }
 `;
 
 const TechnologyList = styled.ul`

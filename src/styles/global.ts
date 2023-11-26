@@ -22,13 +22,6 @@ label{
     font-size: 0.8rem;
 }
 
-button {
-    cursor: pointer;
-    border-radius: 0.25rem;
-    padding: 1rem;
-    transition: 0.3s;
-}
-
 a {
     background-color: var(--grey-2);
     border-radius: 0.25rem;

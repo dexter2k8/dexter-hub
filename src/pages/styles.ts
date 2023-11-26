@@ -25,11 +25,7 @@ const FormField = styled.form`
     text-align: center;
   }
   button {
-    background-color: var(--color-primary);
     margin-top: 1rem;
-    &:hover {
-      background-color: var(--color-primary-hover);
-    }
   }
 `;
 

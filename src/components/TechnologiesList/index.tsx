@@ -1,5 +1,8 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Styles from "./styles";
+import { useState } from "react";
+import Button from "../Button";
+import ModalAddTechnology from "./ModalAddTechnology";
 
 const mock = [
   {
@@ -20,11 +23,18 @@ const mock = [
 ];
 
 function TechnologiesList() {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
+
   return (
     <Styles.Container>
       <Styles.AddTechnology>
         <h2>Tecnologias</h2>
-        <button>+</button>
+        <Button variant="small" onClick={handleOpen}>
+          +
+        </Button>
       </Styles.AddTechnology>
       <Styles.TechnologyList>
         {mock.map((technology) => (
@@ -39,6 +49,7 @@ function TechnologiesList() {
           </li>
         ))}
       </Styles.TechnologyList>
+      <ModalAddTechnology openModal={openModal} handleClose={handleClose} />
     </Styles.Container>
   );
 }

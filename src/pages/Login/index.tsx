@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "../../validators/validateLogin";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import Button from "../../components/Button";
 
 interface ILoginProps {
   email: string;
@@ -38,7 +39,7 @@ function Login() {
           control={control}
           placeholder="Digite aqui sua senha"
         />
-        <button type="submit">Entrar</button>
+        <Button type="submit">Entrar</Button>
       </Styles.FormField>
       <small>Ainda não possui uma conta?</small>
       <Link to={"/register"}>Cadastrar-se</Link>

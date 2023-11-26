@@ -77,6 +77,7 @@ export function makeServer({ environment = "development" }) {
         const newUser = {
           ...attrs,
           id: "2",
+          techs: [],
         };
         return schema.db.profile.insert(newUser);
       });

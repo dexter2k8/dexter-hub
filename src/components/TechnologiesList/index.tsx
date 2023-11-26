@@ -21,7 +21,6 @@ function TechnologiesList() {
     } catch (error) {
       console.error("error", error);
     } finally {
-      // TODO: testar se setUserData funciona para atualizar os dados
       const { data } = await axios.get<IDataUser>("/api/profile"); // chamada do miragejs
       // const { data } = await api.get<iDataUser>("/profile"); // chamada do backend
       setUserData(data);
@@ -37,7 +36,7 @@ function TechnologiesList() {
         </Button>
       </Styles.AddTechnology>
       <Styles.TechnologyList>
-        {userData?.techs.map((technology) => (
+        {userData?.techs?.map((technology) => (
           <li key={technology.id}>
             <p>{technology.title}</p>
             <Styles.Status>

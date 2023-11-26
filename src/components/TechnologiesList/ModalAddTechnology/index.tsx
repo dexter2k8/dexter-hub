@@ -9,7 +9,7 @@ import Button from "../../Button";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { IDataPost, IDataUser } from "../../../interfaces";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 
 interface IModalAddTechnologyProps {
@@ -18,13 +18,12 @@ interface IModalAddTechnologyProps {
 }
 function ModalAddTechnology({ openModal, handleClose }: IModalAddTechnologyProps) {
   const { setUserData } = useContext(AuthContext);
-  const { control, handleSubmit } = useForm({ resolver: yupResolver(schema) });
+  const { setValue, control, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   async function handleTechnology(data: object) {
     try {
-      // TODO: testar se passar o data na chamada já é suficiente
       await axios.post<IDataPost>("/api/users/techs", data); // chamada do miragejs
-      // await api.post<iDataPost>("/users/techs", techData); // chamada do backend
+      // await api.post<iDataPost>("/users/techs", data); // chamada do backend
       handleClose();
     } catch (error) {
       console.error("error", error);
@@ -32,10 +31,15 @@ function ModalAddTechnology({ openModal, handleClose }: IModalAddTechnologyProps
     } finally {
       const { data } = await axios.get<IDataUser>("/api/profile"); // chamada do miragejs
       // const { data } = await api.get<iDataUser>("/profile"); // chamada do backend
-      // TODO: testar se setUserData funciona para atualizar os dados
       setUserData(data);
     }
   }
+
+  useEffect(() => {
+    setValue("title", "");
+    setValue("status", "Iniciante");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openModal]);
 
   return (
     <Modal open={openModal} onClose={handleClose} title="Cadastrar Tecnologia">

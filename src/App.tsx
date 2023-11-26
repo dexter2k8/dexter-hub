@@ -2,6 +2,10 @@ import Global from "./styles/global";
 import RoutesMain from "./routes";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "./contexts/AuthContext";
+import { makeServer } from "./mock/mirageServer";
+
+//interceptor do miragejs
+makeServer({ environment: "development" });
 
 function App() {
   return (

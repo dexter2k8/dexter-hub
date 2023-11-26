@@ -22,7 +22,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function loginUser(data: object) {
     try {
-      console.log(data);
       const res = await axios.post<IDataPost>("/api/sessions", data); // chamada do miragejs
       // const res = await api.post<IDataPost>("/sessions", data); // chamada do backend
       const { user, token } = res.data;

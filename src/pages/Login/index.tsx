@@ -8,6 +8,7 @@ import schema from "../../validators/validateLogin";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import Button from "../../components/Button";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ILoginProps {
   email: string;

@@ -6,21 +6,25 @@ import ModalAddTechnology from "./ModalAddTechnology";
 
 const mock = [
   {
-    id: 1,
+    id: "1",
     title: "HTML",
     status: "Iniciante",
   },
   {
-    id: 2,
+    id: "2",
     title: "CSS",
     status: "Intermediário",
   },
   {
-    id: 3,
+    id: "3",
     title: "JavaScript",
     status: "Avançado",
   },
 ];
+
+async function delTechnology(key: string) {
+  console.log(key);
+}
 
 function TechnologiesList() {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -42,7 +46,7 @@ function TechnologiesList() {
             <p>{technology.title}</p>
             <Styles.Status>
               <small>{technology.status}</small>
-              <span>
+              <span onClick={() => delTechnology(technology.id)}>
                 <FaTrashAlt />
               </span>
             </Styles.Status>

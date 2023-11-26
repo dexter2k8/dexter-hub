@@ -1,6 +1,6 @@
 # dexter-hub
 <p align="center">
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=WORK%20IN%20PROGGRESS&color=yellow&style=for-the-badge" #vitrinedev/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=ALREADY%20DEVELOPED&color=green&style=for-the-badge" #vitrinedev/>
 </p>
 
 <div align="justify">

@@ -7,6 +7,7 @@
 <b>Description</b>
 
 <p>A simple technology hub, to demonstrate the use of most common react tools and libs</p>
+<p>react-hook-form | yup | styled-components | react-toastify | miragejs | axios | react-icons</p>
 
 ![Page layout](https://github.com/dexter2k8/dexter-hub/blob/main/public/page.gif)
 
